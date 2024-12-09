@@ -1,3 +1,41 @@
+Some resources we can refer to for our project!
+
+Landing Page
+Hmm, creativity time
+
+Navigation Bar and Footer
+https://www.geeksforgeeks.org/how-to-add-navbar-to-all-pages-in-nextjs/
+https://www.geeksforgeeks.org/create-footers-using-nextjs-and-tailwind-css/
+
+About me Page
+ok tbh there really isnt anything, use creativity!
+
+Drug Abuse Page
+Information about Drugs like hotlines, common type of drugs available
+What to do when you encounter someone with drugs
+Punishment for drug related offences
+**--EXPLORATORY--Calling External API for news about drugs--EXPLORATORY--** 
+
+Shadcn
+https://ui.shadcn.com/
+
+Tailwind CSS
+https://tailwindcss.com/docs/installation
+
+Quiz Implementation - Drugs related!
+https://www.geeksforgeeks.org/create-a-quiz-app-with-next-js-and-tailwind/
+
+
+
+Something we want to explore (database implementations): Drizzle
+
+Authentication System: Clerk Authentication
+
+
+
+
+
+
 Link for deployed website on Vercel: https://heartcode-mentee-gamma.vercel.app/
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
