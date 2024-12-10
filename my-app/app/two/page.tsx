@@ -28,97 +28,148 @@ import { useToast } from "@/hooks/use-toast"
 import { Button } from "@/components/ui/button"
 import { ToastAction } from "@/components/ui/toast"
 
+
+import React, { useState } from "react";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
-export default function two(){
-    const { toast } = useToast()
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
 
-    return(
-        <div>
+import Image from 'next/image'
+import Picture1 from '@/app/photos/pic1.jpeg'
+import Picture2 from '@/app/photos/pic2.jpeg'
+import Picture3 from '@/app/photos/pic3.png'
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-red-500">
-              Dont do drugs
-            </CardTitle>
-            <CardDescription>
-              drugs are bad
-            </CardDescription>
-          </CardHeader>
-        </Card>
-  
-  
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+
+
+
+export default function two() {
+  const { toast } = useToast()
+
+  return (
+    <div>
+
+
+
+
+
+
+
+      <Card>
+
+      <NavigationMenu className='flex flex-row justify-between min-w-full list-none h-16 sticky top-0 p-5'>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>About drug abuse</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <a href = "/about-drugs-yj">Study Material</a>
+
+              </li>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Quiz</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              <a href = "/Quiz-yj">Take the test!</a>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+
+
+        <CardHeader>
+          <CardTitle className="text-red-500">
+            Dont do drugs
+          </CardTitle>
+          <CardDescription>
+            drugs are bad
+          </CardDescription>
+        </CardHeader>
+
+
+        <CardHeader>
+          <CardTitle className="text-orange-900">
+            About Me
+          </CardTitle>
+          <CardDescription>
+            My name is Yong Jun
+          </CardDescription>
+          <CardDescription className="text-blue-400">
+            I'm from Maris Stella High School
+          </CardDescription>
+        </CardHeader>
+
+
         <Carousel>
+
           <CarouselContent>
-            <CarouselItem>Drugs</CarouselItem>
-            <CarouselItem>are</CarouselItem>
-            <CarouselItem>bad</CarouselItem>
+            <CarouselItem>
+              <Image src={Picture1} alt="1" />
+            </CarouselItem>
+            <CarouselItem>
+              <Image src={Picture2} alt="1" />
+            </CarouselItem>
+            <CarouselItem>
+              <Image src={Picture3} alt="1" />
+            </CarouselItem>
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-  
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-orange-900">
-              About Me
-            </CardTitle>
-            <CardDescription>
-              My name is Yong Jun
-            </CardDescription>
-            <CardDescription className="text-blue-400">
-              I'm from Maris Stella High School
-            </CardDescription>
-          </CardHeader>
-        </Card>
-  
-        <HoverCard>
-          <HoverCardTrigger>My CCA</HoverCardTrigger>
-          <HoverCardContent>
-            National Police Cadet Core (NPCC)
-          </HoverCardContent>
-        </HoverCard>
-  
-  
-  
-          <Button className="text-green-300"
-            variant="outline"
-            onClick={() => {
-              toast({
-                title: "Don't take drugs ",
-                description: "Its not worth it",
-                action: (
-                  <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
-                ),
-              })
-            } }
-            >Free Drugs</Button>
-             <p className="text-white italic text-9xl8">
-          Hello
-        </p>
+
+        <div className="flex justify-center items-center min-l-screen">
+          <div className="p-4">
+            <Card>
+              <HoverCard>
+                <HoverCardTrigger>My CCA</HoverCardTrigger>
+                <HoverCardContent>
+                  National Police Cadet Core (NPCC)
+                </HoverCardContent>
+              </HoverCard>
+              <Button className="text-green-300" variant="outline"
+              onClick={() => {
+                toast({
+                  title: "Subjects ",
+                  description: "English, Higher Chinese, E Math, A Math, Pure Chemistry, Pure Physics, Elective Geography, Social Studies, Pure Literature",
+                  action: (
+                    <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+                  ),
+                })
+              }}>
+                My Subject Combination
+              </Button>
+            </Card>
+          </div>
+        </div>
+
+      </Card>
 
 
-        <DropdownMenu>
-  <DropdownMenuTrigger className = "font-bold">List of common drugs</DropdownMenuTrigger>
-  <DropdownMenuContent>
-    <DropdownMenuLabel>Drugs</DropdownMenuLabel>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem>Heroin</DropdownMenuItem>
-    <DropdownMenuItem>Cocaine</DropdownMenuItem>
-    <DropdownMenuItem>Alcohol</DropdownMenuItem>
-    <DropdownMenuItem>Methamphetamine</DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
 
 
-            </div>
-    )
-
+    </div>
+  )
 }
+
+

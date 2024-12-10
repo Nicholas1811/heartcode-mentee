@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider"
+import { Navbar } from  './components/ui/navbar-menu'
+import { Toaster } from "@/components/ui/toaster";
 
 
 const geistSans = localFont({
@@ -26,7 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <html lang="en">
+          <div className="relative w-full flex items-center justify-center">
+      <Navbar className="top-2" />
+    </div>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -36,8 +42,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
           </ThemeProvider>
+          <Toaster>
+          </Toaster>
       </body>
     </html>
   );
