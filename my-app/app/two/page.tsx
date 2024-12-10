@@ -46,7 +46,7 @@ import Picture3 from '@/app/photos/pic3.png'
 
 
 
-export default function two() {
+export default function Two() {
   const { toast } = useToast()
 
   return (
