@@ -2,9 +2,7 @@
 
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -29,25 +27,15 @@ import { Button } from "@/components/ui/button"
 import { ToastAction } from "@/components/ui/toast"
 
 
-import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import React from "react";
+
 
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 
 import Image from 'next/image'
@@ -55,7 +43,6 @@ import Picture1 from '@/app/photos/pic1.jpeg'
 import Picture2 from '@/app/photos/pic2.jpeg'
 import Picture3 from '@/app/photos/pic3.png'
 
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 
 
 
