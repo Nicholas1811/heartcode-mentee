@@ -106,7 +106,7 @@ export default function two(){
 
 
         <DropdownMenu>
-  <DropdownMenuTrigger class = "font-bold">List of common drugs</DropdownMenuTrigger>
+  <DropdownMenuTrigger className = "font-bold">List of common drugs</DropdownMenuTrigger>
   <DropdownMenuContent>
     <DropdownMenuLabel>Drugs</DropdownMenuLabel>
     <DropdownMenuSeparator />
