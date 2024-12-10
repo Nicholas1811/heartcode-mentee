@@ -56,7 +56,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Boxes } from "@/components/ui/background-boxes";
 
-export default function Home() {
+export default function One() {
   return (
     <>
       <div>
