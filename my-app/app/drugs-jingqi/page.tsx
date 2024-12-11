@@ -34,7 +34,6 @@ import drug1 from ".//../assets/drug1.png"
 
 export default function One() {
 
-
     const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
         null
     );
