@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider"
-import { Navbar } from  './components/ui/navbar-menu'
+import { Navbar } from '../app/components/navbar'
 import { Toaster } from "@/components/ui/toaster";
 
 
@@ -30,12 +30,11 @@ export default function RootLayout({
   return (
     
     <html lang="en" suppressHydrationWarning>
-          <div className="relative w-full flex items-center justify-center">
-      <Navbar className="top-2" />
-    </div>
+         
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
         <ThemeProvider
             attribute="class"
