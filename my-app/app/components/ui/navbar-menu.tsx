@@ -139,7 +139,7 @@ export function Navbar({ className }: { className?: string }) {
 
     return (
         <div
-            className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+            className={cn("fixed inset-x-0 max-w-screen-2xl mx-auto", className)}
         >
             <Menu setActive={setActive}>
                 <MenuItem setActive={setActive} active={active} item="Jing Qi">
@@ -155,8 +155,7 @@ export function Navbar({ className }: { className?: string }) {
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Yong Jun">
                     <div className="flex flex-col space-y-4 text-sm">
-                    <HoveredLink href="/one">One</HoveredLink>
-                    <HoveredLink href="/two">Two</HoveredLink>
+                    <HoveredLink href="/two">My Page</HoveredLink>
                     </div>
                 </MenuItem>
                 <DropdownMenu>

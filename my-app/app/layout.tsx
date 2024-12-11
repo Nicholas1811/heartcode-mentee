@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
           <div className="relative w-full flex items-center justify-center">
       <Navbar className="top-2" />
     </div>
