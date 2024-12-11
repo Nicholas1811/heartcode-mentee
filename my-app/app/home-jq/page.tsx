@@ -42,20 +42,49 @@ export default function One() {
   return (
     <>
       <div>
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Drug Abuse</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <NavigationMenuLink>More</NavigationMenuLink>
-              </NavigationMenuContent>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                About Me
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
+      <NavigationMenu className='flex flex-row justify-between min-w-full list-none h-16 sticky top-0 p-5'>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className= "font-extrabold text \ text-red-600">Homepage</NavigationMenuTrigger>
+          
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                   <a href = "/home-jq">Homepage</a>
+
+              </li>
+            </ul>
+                  
+
+          </NavigationMenuContent>
+          
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className= "font-extrabold text \ text-red-600"> What is Drug Abuse?</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              <a href = "/drugs-jingqi">Different types of drugs</a>
+            </ul>
+          
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              <a href = "/quiz-jingqi">Pop Quiz</a>
+            </ul>
+          </NavigationMenuContent>
+          <NavigationMenuTrigger className= "font-extrabold text \ text-red-600"> About Me</NavigationMenuTrigger>
+        </NavigationMenuItem>
+        
+      </NavigationMenuList>
+    </NavigationMenu>
+
+    
+
+        </div>
+
+      <ul>
+ 
+</ul>
+
+ 
       <Card>
         <CardHeader>
           <CardTitle className="font-extrabold text-4xl \ text-red-600"><center>About Me</center></CardTitle>

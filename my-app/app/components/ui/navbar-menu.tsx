@@ -144,8 +144,8 @@ export function Navbar({ className }: { className?: string }) {
             <Menu setActive={setActive}>
                 <MenuItem setActive={setActive} active={active} item="Jing Qi">
                     <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/one">About Me</HoveredLink>
-                        <HoveredLink href="/two">Quiz</HoveredLink>
+                        <HoveredLink href="/home-jq">Homepage </HoveredLink>
+                        
                     </div>
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Landing">
