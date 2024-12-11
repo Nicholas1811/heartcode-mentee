@@ -261,7 +261,7 @@ export default function One() {
 }
 
 
-export const CloseIcon = () => {
+const CloseIcon = () => {
     return (
         <motion.svg
             initial={{
