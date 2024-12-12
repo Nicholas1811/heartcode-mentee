@@ -5,7 +5,14 @@ import { ThemeProvider } from "./components/theme-provider"
 import { Navbar } from '../app/components/navbar'
 import { Toaster } from "@/components/ui/toaster";
 
-
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
+import './globals.css'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
+    <ClerkProvider>
+      
+      
     <html lang="en" suppressHydrationWarning>
          
       <body
@@ -47,8 +56,16 @@ export default function RootLayout({
           </ThemeProvider>
           <Toaster>
           </Toaster>
+
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
       </body>
     </html>
-    
-  );
+    </ClerkProvider>
+  )
 }
+

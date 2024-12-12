@@ -1,11 +1,38 @@
 "use client";
 import { Navbar } from '../app/components/navbar'
 
+import React from "react";
+import { WavyBackground } from "@/components/ui/wavy-background";
+import { Button } from '@/components/ui/button';
+import Link from 'next/link'
+
 //This is the page we will be messing around with, our landing page!
 export default function Home() {
   return (
-    <div>
-      This is your landing page!
-    </div>
+
+    <>
+      <WavyBackground>
+        <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+          Hero waves are cool
+        </p>
+        <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
+          Leverage the power of canvas to create a beautiful hero section
+        </p>
+        <div className = "flex items-center justify-center mt-10">
+            <Link href="/two">
+              <Button className = "mr-10">
+                Yong Jun
+              </Button>
+            </Link>
+            <Link href="/home-jq">
+              <Button className = "ml-10">
+                Jing Qi
+              </Button>
+            </Link>
+            </div>
+      </WavyBackground>
+    </>
   );
 }
+
+

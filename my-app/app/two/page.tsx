@@ -7,13 +7,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
 
 import {
   HoverCard,
@@ -38,10 +31,17 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Picture1 from '@/app/photos/pic1.jpeg'
 import Picture2 from '@/app/photos/pic2.jpeg'
 import Picture3 from '@/app/photos/pic3.png'
+import PictureMe from '@/app/photos/Me.jpg'
+import PictureFlags from '@/app/photos/flags.jpg'
+import PictureGatePri from '@/app/photos/GatePri.jpg'
+import PictureNice1 from '@/app/photos/Nice1.jpg'
+import PictureNice2 from '@/app/photos/Nice2.jpg'
+import PictureAiden from '@/app/photos/Aiden.jpg'
+import PictureStaircase from '@/app/photos/Staircase.jpg'
 
 import {
   Drawer,
@@ -54,15 +54,13 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer"
 
-import Image2 from "next/image";
-import React2 from "react";
-import { Carousel2, Card2npm } from "@/components/ui/apple-cards-carousel";
+import { Carousel, CardApple } from "@/components/ui/apple-cards-carousel";
 
 export default function Two() {
-  const { toast } = useToast()
   const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
+    <CardApple key={card.src} card={card} index={index} layout={true} />
   ));
+  const { toast } = useToast()
   return (
     <div>
       <Card>
@@ -115,23 +113,6 @@ export default function Two() {
           </CardDescription>
         </CardHeader>
 
-
-        <Carousel><center>
-
-          <CarouselContent>
-            <CarouselItem>
-              <Image src={Picture1} alt="1" />
-            </CarouselItem>
-            <CarouselItem>
-              <Image src={Picture2} alt="1" />
-            </CarouselItem>
-            <CarouselItem>
-              <Image src={Picture3} alt="1" />
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </center></Carousel>
 
         <Drawer><center>
           <DrawerTrigger>My Hobbies</DrawerTrigger>
@@ -195,18 +176,16 @@ export default function Two() {
       </Card>
       <div className="w-full h-full py-20">
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-          Get to know your iSad.
+          Pictures
         </h2>
-        <Carousel items={cards} />
+        
       </div>
+      <Carousel items={cards} />
     </div>
-
-
-
   )
 }
 
-const DummyContent = () => {
+const Logo = () => {
   return (
     <>
       {[...new Array(3).fill(1)].map((_, index) => {
@@ -217,19 +196,162 @@ const DummyContent = () => {
           >
             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
               <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                The first rule of Apple club is that you boast about Apple club.
+                School Motto
               </span>{" "}
-              Keep a journal, quickly jot down a grocery list, and take amazing
-              class notes. Want to convert those notes to text? No problem.
-              Langotiya jeetu ka mara hua yaar is ready to capture every
-              thought.
+              勤·勉·忠·勇
+              (Diligence, Determination, Loyalty and Courage)
             </p>
             <Image
-              src="https://assets.aceternity.com/macbook.png"
               alt="Macbook mockup from Aceternity UI"
               height="500"
               width="500"
               className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+              src={PictureFlags}
+            />
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+const Gate = () => {
+  return (
+    <>
+      {[...new Array(3).fill(1)].map((_, index) => {
+        return (
+          <div
+            key={"dummy-content" + index}
+            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          >
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+                The Primary School Gate
+              </span>{" "}
+             
+            </p>
+            <Image
+              alt="Macbook mockup from Aceternity UI"
+              height="500"
+              width="500"
+              className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+              src={PictureGatePri}
+            />
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+const Porch = () => {
+  return (
+    <>
+      {[...new Array(3).fill(1)].map((_, index) => {
+        return (
+          <div
+            key={"dummy-content" + index}
+            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          >
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+                The school staricase
+              </span>{" "}
+             
+            </p>
+            <Image
+              alt="Macbook mockup from Aceternity UI"
+              height="500"
+              width="500"
+              className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+              src={PictureStaircase}
+            />
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+const CCA = () => {
+  return (
+    <>
+      {[...new Array(3).fill(1)].map((_, index) => {
+        return (
+          <div
+            key={"dummy-content" + index}
+            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          >
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+                My junior
+              </span>{" "}
+              Aiden
+            </p>
+            <Image
+              alt="Macbook mockup from Aceternity UI"
+              height="500"
+              width="500"
+              className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+              src={PictureAiden}
+            />
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+const Smt1 = () => {
+  return (
+    <>
+      {[...new Array(3).fill(1)].map((_, index) => {
+        return (
+          <div
+            key={"dummy-content" + index}
+            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          >
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+                Smt1
+              </span>{" "}
+             
+            </p>
+            <Image
+              alt="Macbook mockup from Aceternity UI"
+              height="500"
+              width="500"
+              className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+              src={Picture3}
+            />
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+const Smt2 = () => {
+  return (
+    <>
+      {[...new Array(3).fill(1)].map((_, index) => {
+        return (
+          <div
+            key={"dummy-content" + index}
+            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          >
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+                Smt2
+              </span>{" "}
+           
+            </p>
+            <Image
+              alt="Macbook mockup from Aceternity UI"
+              height="500"
+              width="500"
+              className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+              src={Picture3}
             />
           </div>
         );
@@ -240,40 +362,40 @@ const DummyContent = () => {
 
 const data = [
   {
-    category: "Artificial Intelligence",
-    title: "You can do more with AI.",
+    category: "My School",
+    title: "School Logo",
     src: Picture3,
-    content: <DummyContent />,
+    content: <Logo />,
   },
   {
-    category: "Productivity",
-    title: "Enhance your productivity.",
-    src: Picture3,
-    content: <DummyContent />,
+    category: "",
+    title: "Front Porch",
+    src: Picture1,
+    content: <Porch />,
   },
   {
-    category: "Product",
-    title: "Launching the new Apple Vision Pro.",
-    src: Picture3,
-    content: <DummyContent />,
+    category: "",
+    title: "School Gate",
+    src: Picture2,
+    content: <Gate />,
   },
 
   {
-    category: "Product",
-    title: "Maps for your iPhone 15 Pro Max.",
-    src: Picture3,
-    content: <DummyContent />,
+    category: "CCA",
+    title: "National Police Cadet Core (NPCC)",
+    src: PictureMe,
+    content: <CCA />,
   },
   {
     category: "iOS",
     title: "Photography just got better.",
     src: Picture3,
-    content: <DummyContent />,
+    content: <Smt1 />,
   },
   {
     category: "Hiring",
     title: "Hiring for a Staff Software Engineer",
     src: Picture3,
-    content: <DummyContent />,
+    content: <Smt2 />,
   },
 ];

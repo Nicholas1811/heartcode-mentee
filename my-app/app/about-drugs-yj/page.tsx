@@ -37,6 +37,10 @@ import { Move } from "lucide-react";
 
 import { FocusCards } from '@/components/ui/focus-cards'
 
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
+
+
+
 const content = [
   {
     title: "Methamphetamine",
@@ -119,6 +123,10 @@ const content = [
     ),
   },
 ];
+
+const words = `Drug addiction can strain your relationships with your loved ones, lead to legal troubles, disrupt employment, and create significant financial challenges that you may not be able to get out of. So... DON'T TAKE DRUGS!!!
+`;
+ 
 
 export default function AboutDrugs() {
 
@@ -241,8 +249,10 @@ export default function AboutDrugs() {
         </div>
         <FocusCards cards={cards} />;
 
-
+    
       </div>
+      <TextGenerateEffect words={words} />
     </>
   )
 }
+

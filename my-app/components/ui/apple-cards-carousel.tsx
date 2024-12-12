@@ -21,7 +21,7 @@ interface CarouselProps {
   initialScroll?: number;
 }
 
-type Card = {
+type CardApple = {
   src: string;
   title: string;
   category: string;
@@ -153,12 +153,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   );
 };
 
-export const Card = ({
+export const CardApple = ({
   card,
   index,
   layout = false,
 }: {
-  card: Card;
+  card: CardApple;
   index: number;
   layout?: boolean;
 }) => {

@@ -27,8 +27,17 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
+import { useToast } from "@/hooks/use-toast"
+
+import { useState } from "react"
+
 const formSchema = z.object({
   username: z.string().min(2).max(50),
+  q1: z.string(),
+  q2: z.string(),
+  q3: z.string(),
+  q4: z.string(),
+  q5: z.string(),
 });
 
 export default function QuizYj() {
@@ -36,11 +45,34 @@ export default function QuizYj() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
+      q1: "",
+      q2: "",
+      q3: "",
+      q4: "",
+      q5: "",
     },
   });
 
+  const { toast } = useToast()
+  const [score, setScore] = useState(0)
+  const [showResults, setShowResults] = useState(false)
+
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    let newScore = 0
+    if (values.q1 === "ice") newScore++
+    if (values.q2 === "poppy") newScore++
+    if (values.q3 === "altersthinking") newScore++
+    if (values.q4 === "leaves") newScore++
+    if (values.q5 === "alcohol") newScore++
+
+    setScore(newScore)
+    setShowResults(true)
+
+    toast({
+     title: `Thank you, ${values.username}!`,
+     description:`You scored ${newScore} out of 5`
+    })
+
   }
 
   return (
@@ -91,99 +123,188 @@ export default function QuizYj() {
             )}
           />
 
-          <FormItem>
-            <FormLabel>What is another name for methamphetamine</FormLabel>
-            <RadioGroup defaultValue="option-one">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-one" id="option-one" />
-                <Label htmlFor="option-one">Snow</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-two" id="option-two" />
-                <Label htmlFor="option-two">Tar</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-three" id="option-three" />
-                <Label htmlFor="option-two">Ice</Label>
-              </div>
-            </RadioGroup>
-          </FormItem>
 
-          <FormItem>
-            <FormLabel>What flowers provide the seed pods used in the production of heroin</FormLabel>
-            <RadioGroup defaultValue="option-one">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-one" id="option-one" />
-                <Label htmlFor="option-one">Hibiscus</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-two" id="option-two" />
-                <Label htmlFor="option-two">Poppy</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-three" id="option-three" />
-                <Label htmlFor="option-two">Datura</Label>
-              </div>
-            </RadioGroup>
-          </FormItem>
+          <FormField
+            control={form.control}
+            name="q1"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>What is another name for methamphetamine</FormLabel>
+                <FormControl>
+                <RadioGroup
+                onValueChange={field.onChange}
+                defaultValue={field.value}
+                >
+                  <div className="flex items-center space-x-2">
+                    <FormItem>
+                    <FormControl>
+                    <RadioGroupItem value="snow" id="option-one" />
+                    </FormControl>
+                    <Label htmlFor="option-one">Snow</Label>
+                    </FormItem>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="tar" id="option-two" />
+                    </FormControl>
+  
+                    <Label htmlFor="option-two">Tar</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="ice" id="option-three" />
+                    </FormControl>
+                
+                    <Label htmlFor="option-two">Ice</Label>
+                  </div>
+                </RadioGroup>
+                </FormControl>
+              </FormItem>
+            )}
+          />
 
-          <FormItem>
-            <FormLabel>What effects does cannabis have on a person</FormLabel>
-            <RadioGroup defaultValue="option-one">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-one" id="option-one" />
-                <Label htmlFor="option-one">Inflamation</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-two" id="option-two" />
-                <Label htmlFor="option-two">Alters their thinking</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-three" id="option-three" />
-                <Label htmlFor="option-two">Sleep deprevation</Label>
-              </div>
-            </RadioGroup>
-          </FormItem>
 
-          <FormItem>
-            <FormLabel>What part of the coca plant is used to make cocaine</FormLabel>
-            <RadioGroup defaultValue="option-one">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-one" id="option-one" />
-                <Label htmlFor="option-one">leaves</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-two" id="option-two" />
-                <Label htmlFor="option-two">roots</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-three" id="option-three" />
-                <Label htmlFor="option-two">flower</Label>
-              </div>
-            </RadioGroup>
-          </FormItem>
+          <FormField
+            control={form.control}
+            name="q2"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>What flowers provide the seed pods used in the production of heroin</FormLabel>
+                <FormControl>
+                <RadioGroup onValueChange={field.onChange}
+                defaultValue={field.value}>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="hibiscus" id="option-one" />
+                    </FormControl>
+                    <Label htmlFor="option-one">Hibiscus</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="poppy" id="option-two" />
+                    </FormControl>
+                    <Label htmlFor="option-two">Poppy</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="datura" id="option-three" />
+                    </FormControl>
+                    <Label htmlFor="option-two">Datura</Label>
+                  </div>
+                </RadioGroup>
+                </FormControl>
+              </FormItem>
+            )}
+          />
 
-          <FormItem>
+          <FormField
+            control={form.control}
+            name="q3"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>What effects does cannabis have on a person</FormLabel>
+                <FormControl>
+                <RadioGroup onValueChange={field.onChange}
+                defaultValue={field.value}>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="inflamation" id="option-one" />
+                    </FormControl>
+                    <Label htmlFor="option-one">Inflamation</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="altersthinking" id="option-two" />
+                    </FormControl>
+        
+                    <Label htmlFor="option-two">Alters their thinking</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="sleepdeprevation" id="option-three" />
+                    </FormControl>
+                    <Label htmlFor="option-two">Sleep deprevation</Label>
+                  </div>
+                </RadioGroup>
+                </FormControl>
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="q4"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>What part of the coca plant is used to make cocaine</FormLabel>
+                <FormControl>
+                <RadioGroup onValueChange={field.onChange}
+                defaultValue={field.value}>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="leaves" id="option-one" />
+                    </FormControl>
+                    <Label htmlFor="option-one">Leaves</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="roots" id="option-two" />
+                    </FormControl>
+                    <Label htmlFor="option-two">roots</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FormControl>
+                    <RadioGroupItem value="flower" id="option-three" />
+                    </FormControl>
+                    <Label htmlFor="option-two">Flower</Label>
+                  </div>
+                </RadioGroup>
+                </FormControl>
+              </FormItem>
+            )}
+          />
+
+<FormField
+            control={form.control}
+            name="q5"
+            render={({ field }) => (
+              <FormItem>
             <FormLabel>What drug is the most commonly abused in America</FormLabel>
-            <RadioGroup defaultValue="option-one">
+            <FormControl>
+            <RadioGroup onValueChange={field.onChange}
+                defaultValue={field.value}>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-one" id="option-one" />
+                <FormControl>
+                <RadioGroupItem value="fetanyl" id="option-one" />
+                </FormControl>
                 <Label htmlFor="option-one">fentanyl</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-two" id="option-two" />
+                <FormControl>
+                <RadioGroupItem value="alcohol" id="option-two" />
+                </FormControl>
                 <Label htmlFor="option-two">Alcohol</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option-three" id="option-three" />
+                <FormControl>
+                <RadioGroupItem value="cocaine" id="option-three" />
+                </FormControl>
                 <Label htmlFor="option-two">Cocaine</Label>
               </div>
             </RadioGroup>
+            </FormControl>
           </FormItem>
-
+            )}
+          />
           <Button type="submit">Submit</Button>
         </form>
       </Form>
+      {showResults && (
+        <p className="text-sm">
+        Your score: {score} out of 5. 
+        </p>
+        
+      )}
     </div>
   );
 }
