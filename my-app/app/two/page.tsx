@@ -115,7 +115,7 @@ export default function Two() {
 
 
         <Drawer><center>
-          <DrawerTrigger>My Hobbies</DrawerTrigger>
+          <DrawerTrigger>My Hobbies(Click Me!)</DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>
               <DrawerTitle>Hobbies</DrawerTitle>
@@ -150,15 +150,17 @@ export default function Two() {
 
 
         <div className="flex justify-center items-center min-l-screen">
-          <div className="p-4">
-            <Card>
+          <div className="relative">
+            <Card className = "absolute left-0 w-40 ml-5">
               <HoverCard>
-                <HoverCardTrigger>My CCA</HoverCardTrigger>
+                <HoverCardTrigger> Co-Curricular Activity </HoverCardTrigger>
                 <HoverCardContent>
                   National Police Cadet Core (NPCC)
                 </HoverCardContent>
               </HoverCard>
-              <Button className="text-green-300" variant="outline"
+            </Card>
+
+            <Button className="text-green-300 absolute right-0" variant="outline"
                 onClick={() => {
                   toast({
                     title: "Subjects ",
@@ -170,7 +172,6 @@ export default function Two() {
                 }}>
                 My Subject Combination
               </Button>
-            </Card>
           </div>
         </div>
       </Card>

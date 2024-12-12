@@ -15,8 +15,8 @@ export default function Home() {
         <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
           Group 1's Homepage
         </p>
-        <p className="text-base md:text-lg mt-4 text-white font-bold inter-var text-center">
-          Leverage the power of canvas to create a beautiful hero section
+        <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
+          Webpage about drugs
         </p>
         <div className = "flex items-center justify-center mt-10">
             <Link href="/two">
