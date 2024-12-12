@@ -36,7 +36,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
          
       <body
@@ -53,17 +52,9 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
           <Toaster>
-          </Toaster>
-
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+          </Toaster>     
       </body>
     </html>
-    </ClerkProvider>
   )
 }
 
