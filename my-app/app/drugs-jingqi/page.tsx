@@ -24,12 +24,39 @@ import {
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
+
+
+
 import cannabis from ".//../assets/weed.jpeg"
 import heroin from ".//../assets/heroin.jpg"
 import meth from ".//../assets/meth.jpeg"
 import NPS from ".//../assets/NPS.jpeg"
 import cocaine from ".//../assets/cocaine.jpeg"
 import drug1 from ".//../assets/drug1.png"
+import web1 from ".//../assets/web1.png"
+import web2 from ".//../assets/web2.png"
+import web3 from ".//../assets/web3.png"
+
+import { Button } from "@/components/ui/button"
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+
 
 
 export default function One() {
@@ -69,7 +96,7 @@ export default function One() {
                             <NavigationMenuContent>
                                 <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                                     <li className="row-span-3">
-                                        <a href="/home-jq">Homepage</a>
+                                        <a href="/home-jq">About Me</a>
 
                                     </li>
                                 </ul>
@@ -85,7 +112,7 @@ export default function One() {
                                     <a href="/quiz-jingqi">Pop Quiz</a>
                                 </ul>
                             </NavigationMenuContent>
-                            <NavigationMenuTrigger className="font-extrabold text \ text-red-600"> About Me</NavigationMenuTrigger>
+                           
                         </NavigationMenuItem>
 
                     </NavigationMenuList>
@@ -104,17 +131,60 @@ export default function One() {
                 <CardHeader>
                     <CardTitle className="font-extrabold text-4xl \ text-red-600"><center>Common Drugs To Know</center></CardTitle>
                     <CardDescription className="font-sans \ text-cyan-400"><center>Drugs come in many forms, shapes, and sizes, so be sure to equip yourself with the necessary knowledge!</center> </CardDescription>
+                    <CardContent className="font-extrabold text 2xl"><center>Get to know our residents.</center>
 
+                    </CardContent>
                 </CardHeader>
 
-                <CardContent className= "font-extrabold text 2xl"><center>Get to know our residents.</center>
-
-                </CardContent>
+                
 
                 <CardFooter>
                     <p></p>
                 </CardFooter>
             </Card>
+
+            <div className="h-full flex justify-center">
+                <Carousel className="w-full max-w-xs-100">
+                    <CarouselContent>
+                        <CarouselItem>
+                            <div className="p-1">
+                                <Card>
+                                    <CardContent className="flex aspect-rectangular items-center justify-center p-6">
+                                        <Image src={web2}
+                                            alt="hi"
+                                        />
+                                    </CardContent>
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="p-1">
+                                <Card>
+                                    <CardContent className="flex aspect-rectangular items-center justify-center p-6">
+                                        <Image src={web1}
+                                            alt="hi"
+                                        />
+                                    </CardContent> 
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="p-1">
+                                <Card>
+                                    <CardContent className="flex aspect-rectangular items-center justify-center p-6">
+                                        <Image src={web3}
+                                            alt="hi"
+                                        />
+                                    </CardContent> 
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
+
+            </div>
 
 
             <AnimatePresence>
@@ -251,6 +321,7 @@ export default function One() {
             </ul>
 
 
+
         </><><Image
             src={drug1}
             width={900}
@@ -260,6 +331,7 @@ export default function One() {
     )
 }
 
+       
 
 const CloseIcon = () => {
     return (
@@ -296,7 +368,7 @@ const CloseIcon = () => {
 
 const cards = [
     {
-        description: <p className= "font-extrabold text / text-red-600">Just a Plant!</p>,
+        description: <p className="font-extrabold text / text-red-600">Just a Plant!</p>,
         title: "Wanna inhale the scent of nature?",
         src: cannabis,
         ctaText: "Who Am I?",
@@ -306,34 +378,34 @@ const cards = [
                 <p>
 
                     Hi, I'm Cannabis! (Nickname Weed/Pot)
-                    I'm made from the dried leaves, flowers, stems, 
+                    I'm made from the dried leaves, flowers, stems,
                     and seeds of the cannabis plant.
-                    My products with THC can cause changes in mood, thoughts, 
-                     and perceptions of reality.
+                    My products with THC can cause changes in mood, thoughts,
+                    and perceptions of reality.
                 </p>
             );
         },
     },
     {
-        description: <p className= "font-extrabold text / text-red-600">A "Hero"...or Not.</p>,
+        description: <p className="font-extrabold text / text-red-600">A "Hero"...or Not.</p>,
         title: "I can be your saviour!",
-        src: heroin ,
+        src: heroin,
         ctaText: "Who Am I?",
         ctaLink: "https://ui.aceternity.com/templates",
         content: () => {
             return (
                 <p>
-                    The name's Heroin! (Nickname White/Smack/Junk) 
-                    I'm a powerful and very addictive drug obtained from the opium poppy. I come in many forms. Consuming me can lead to effects such as lowered heart rate and respiration, and may be even fatal. 
+                    The name's Heroin! (Nickname White/Smack/Junk)
+                    I'm a powerful and very addictive drug obtained from the opium poppy. I come in many forms. Consuming me can lead to effects such as lowered heart rate and respiration, and may be even fatal.
                 </p>
             );
         },
     },
 
     {
-        description: <p className= "font-extrabold text / text-red-600">Why So Cold?</p>,
+        description: <p className="font-extrabold text / text-red-600">Why So Cold?</p>,
         title: "I may be familiar...",
-        src: meth ,
+        src: meth,
         ctaText: "Who Am I?",
         ctaLink: "https://ui.aceternity.com/templates",
         content: () => {
@@ -345,9 +417,9 @@ const cards = [
         },
     },
     {
-        description: <p className= "font-extrabold text / text-red-600">Spice Your Life Up!</p>,
+        description: <p className="font-extrabold text / text-red-600">Spice Your Life Up!</p>,
         title: "You Only Live Once.",
-        src: NPS ,
+        src: NPS,
         ctaText: "Who Am I?",
         ctaLink: "https://ui.aceternity.com/templates",
         content: () => {
@@ -359,9 +431,9 @@ const cards = [
         },
     },
     {
-        description: <p className= "font-extrabold text / text-red-600">Coca-Cola?</p>,
+        description: <p className="font-extrabold text / text-red-600">Coca-Cola?</p>,
         title: "Am I drinkable?",
-        src: cocaine ,
+        src: cocaine,
         ctaText: "Who Am I?",
         ctaLink: "https://ui.aceternity.com/templates",
         content: () => {
@@ -372,9 +444,11 @@ const cards = [
             );
         },
 
-        
+
     },
 
-    
+
+
+
 ];
 

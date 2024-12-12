@@ -21,7 +21,7 @@ import {
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Yong Jun', href: '/two' },
-  { label: 'Jun Qi', href: '/home-jq' },
+  { label: 'Jing Qi', href: '/home-jq' },
 ]
 
 export function Navbar() {
