@@ -39,7 +39,7 @@ import { FocusCards } from '@/components/ui/focus-cards'
 
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 
-
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 const content = [
   {
@@ -202,7 +202,13 @@ export default function AboutDrugs() {
 
 
   return (
+
+
+
     <>
+
+
+
       <div>
 
 
@@ -244,6 +250,8 @@ export default function AboutDrugs() {
             <DropdownMenuItem>Alcohol</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        
+
         <div className="p-10">
           <StickyScroll content={content} />
         </div>
@@ -251,8 +259,15 @@ export default function AboutDrugs() {
 
     
       </div>
+      <BackgroundBeamsWithCollision>
       <TextGenerateEffect words={words} />
+      </BackgroundBeamsWithCollision>
+     
+
     </>
+
+
+
   )
 }
 
