@@ -37,6 +37,7 @@ import milk from '@/app/assets/milk.jpg'
 import pancake from '@/app/assets/pancake.jpg'
 import taiko from '@/app/assets/taiko.jpg'
 import rgs from '@/app/assets/rgs.png'
+import drug1 from '@/app/assets/drugs.gif'
 
 
 import shark from '@/app/assets/shark.jpg'
@@ -219,7 +220,14 @@ export default function One() {
 
       </Card>
 
-      
+      <center><Image 
+          src={drug1}
+          width={300}
+          height={300}
+          alt="design1"
+          className=" h-30 mt-30" /></center>
+         
+
 
       {">"}<AlertDialog><center>
         <AlertDialogTrigger><Button variant="outline">More Info</Button>
@@ -254,6 +262,7 @@ export default function One() {
       </center></AlertDialog><div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
         <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
+        
         <div>
         <Boxes />
           
