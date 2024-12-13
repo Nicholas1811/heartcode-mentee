@@ -119,11 +119,7 @@ export default function QuizJQ() {
                                 <a href="/drugs-jingqi">Different types of drugs</a>
                             </ul>
 
-                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                <a href="/quiz-jingqi">Pop Quiz</a>
-                            </ul>
-
-
+                           
                         </NavigationMenuContent>
 
                     </NavigationMenuItem>
