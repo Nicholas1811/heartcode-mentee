@@ -102,7 +102,7 @@ export default function QuizYj() {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="h-14 bg-gradient-to-r from-white to-black"></div>
+   
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

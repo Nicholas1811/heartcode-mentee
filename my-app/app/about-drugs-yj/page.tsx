@@ -236,8 +236,7 @@ export default function AboutDrugs() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="h-14 bg-gradient-to-r from-white to-black"></div>
-
+      
         <DropdownMenu>
           <DropdownMenuTrigger className="font-bold">List of common drugs</DropdownMenuTrigger>
           <DropdownMenuContent>
