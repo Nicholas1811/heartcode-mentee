@@ -25,12 +25,30 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import Image from 'next/image'
-import drugs from '@/app/assets/drugs.jpeg'
+import cat from '@/app/assets/cat.jpg'
 import design1 from ".//../assets/design1.png"
+import milk from '@/app/assets/milk.jpg'
+import pancake from '@/app/assets/pancake.jpg'
+import taiko from '@/app/assets/taiko.jpg'
+import rgs from '@/app/assets/rgs.png'
+
+
+import shark from '@/app/assets/shark.jpg'
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
 
 
 import React from "react";
@@ -40,7 +58,7 @@ import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
 
 export default function One() {
-  
+
 
   const words = [
     {
@@ -54,136 +72,195 @@ export default function One() {
     },
     {
       text: "you",
-      className: "text-blue-500 dark:text-blue-500",
+      className: "text-red-600 dark:text-red-600",
     },
-      
-    
+
+
   ];
   return (
     <>
+   
 
-      
+
       <div>
-      <NavigationMenu className='flex flex-row justify-between min-w-full list-none h-16 sticky top-0 p-5'>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className= "font-extrabold text \ text-red-600">Homepage</NavigationMenuTrigger>
-          
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                   <a href = "/home-jq">About Me</a>
-              </li>
-            </ul>
-                  
+        <NavigationMenu className='flex flex-row justify-between min-w-full list-none h-16 sticky top-0 p-5'>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="font-extrabold text \ text-red-600">Homepage</NavigationMenuTrigger>
 
-          </NavigationMenuContent>
-          
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className= "font-extrabold text \ text-red-600"> What is Drug Abuse?</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              <a href = "/drugs-jingqi">Different types of drugs</a>
-            </ul>
-          
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              <a href = "/quiz-jingqi">Pop Quiz</a>
-            </ul>
-          </NavigationMenuContent>
-         
-        </NavigationMenuItem>
-        
-      </NavigationMenuList>
-    </NavigationMenu>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <li className="row-span-3">
+                    <a href="/home-jq">About Me</a>
+                  </li>
+                </ul>
 
-    
 
-        </div>
+              </NavigationMenuContent>
+
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="font-extrabold text \ text-red-600"> What is Drug Abuse?</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                  <a href="/drugs-jingqi">Different types of drugs</a>
+                </ul>
+
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                  <a href="/quiz-jingqi">Pop Quiz</a>
+                </ul>
+              </NavigationMenuContent>
+
+            </NavigationMenuItem>
+
+          </NavigationMenuList>
+        </NavigationMenu>
+
+
+
+      </div>
 
       <ul>
- 
-</ul>
+
+      </ul>
 
 
- 
+
       <Card>
-      <Image
-                src={design1}
-                width={500}
-                height={500}
-                alt="design1"
-                className="w-screen h-60 mt-30" />
-            <div className="flex items-center justify-center"></div>
+        <Image
+          src={design1}
+          width={500}
+          height={500}
+          alt="design1"
+          className="w-screen h-60 mt-30" />
+        <div className="flex items-center justify-center"></div>
 
 
-            <div className="flex flex-col items-center justify-center h-[20rem] ">
-      <p className="text-neutral-600 dark:text-neutral-200 text-base  mb-10">
-        Get to know me.
-      </p>
-      <TypewriterEffect words={words} />
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
-        
-      </div>
-    </div>
+        <div className="flex flex-col items-center justify-center h-[20rem] ">
+          <p className="text-neutral-600 dark:text-neutral-200 text-base  mb-10">
+            Get to know me.
+          </p>
+          <TypewriterEffect words={words} />
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
 
+          </div>
+        </div>
+
+        <div className="flex justify-center">
+                <Carousel className="w-1/3 h-1/4">
+                    <CarouselContent>
+                        <CarouselItem>
+                            <div className="p-1">
+                                <Card>
+                                    <CardContent className="flex aspect-rectangular items-center justify-center p-6">
+                                        <Image src={shark}
+                                            alt="hi"
+                                        />
+                                    </CardContent>
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="p-1">
+                                <Card>
+                                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                                        <Image src={cat}
+                                            alt="hi"
+                                        />
+                                    </CardContent> 
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="p-1">
+                                <Card>
+                                    <CardContent className="flex aspect-rectangular items-center justify-center p-6">
+                                        <Image src={taiko}
+                                            alt="hi"
+                                        />
+                                    </CardContent> 
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="p-1">
+                                <Card>
+                                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                                        <Image src={pancake}
+                                            alt="hi"
+                                        />
+                                    </CardContent> 
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
+
+            </div>
+
+           
         <CardHeader>
           <CardTitle className="font-extrabold text-4xl \ text-red-600"><center>About Me</center></CardTitle>
-          <CardDescription className="font-extrabold text-1xl"><center>Pang Jing Qi (彭靖淇）</center> </CardDescription>
-            <CardDescription className="font-extrabold text-1xl"><center>6th January 2008</center> </CardDescription>
-          
-         
-          
+          <CardDescription ><center>Pang Jing Qi</center> </CardDescription>
+
+
+
         </CardHeader>
 
-        <CardContent><center>Introductions aside, are you ready to dive into the SECRET WORLD of drugs?</center>
+        <CardContent><center>Enjoys drawing, cats, rhythm games, and finding places to eat in Singapore.</center>
 
         </CardContent>
 
         <CardFooter>
-         
+
         </CardFooter>
 
       </Card>
 
       
-      <div
-        style={{
-          display: 'flex',
-          justifyContent:"center",
-        }}
-        >
-      <Image
-        src={drugs}
-        width={500}
-        height={500}
-        alt="Picture of some drugs" />
-      </div>
+
       {">"}<AlertDialog><center>
-        <AlertDialogTrigger><Button variant="outline">Psst...I have some cool stuff here.</Button>
+        <AlertDialogTrigger><Button variant="outline">More Info</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>You see a clump of 'Mystery Magic Grass'.</AlertDialogTitle>
-            <AlertDialogDescription>
-              Those are DRUGS!! Why are you doing drugs.
+            <AlertDialogTitle>More about me.</AlertDialogTitle>
+            <AlertDialogDescription><p className = "font-bold text / text-red-600">
+              School: </p> Raffles Girls' School (Secondary)
+            
             </AlertDialogDescription>
+            <AlertDialogDescription>
+            <p className = "font-bold text / text-red-600">Age:</p> 16
+            
+
+              <Image
+          src={rgs}
+          width={300}
+          height={300}
+          alt="design1"
+          className=" h-30 mt-30" />
+       
+          
+            </AlertDialogDescription>
+            <AlertDialogDescription><p className = "font-bold text / text-red-600">Status:</p> Graduated</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Nah. </AlertDialogCancel>
-            <AlertDialogAction>I want the Magic Grass.</AlertDialogAction>
+            <AlertDialogCancel>Back</AlertDialogCancel>
+            
           </AlertDialogFooter>
         </AlertDialogContent>
-        </center></AlertDialog><div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
+      </center></AlertDialog><div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
         <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
+        <div>
         <Boxes />
-        <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
-          POV: You're on drugs
-        </h1>
-        <p className="text-center mt-2 text-neutral-300 relative z-20">
-          What in the world ?
-        </p>
+          
+          </div>
+
+
+       
 
 
 

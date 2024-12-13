@@ -372,7 +372,7 @@ const cards = [
         title: "Wanna inhale the scent of nature?",
         src: cannabis,
         ctaText: "Who Am I?",
-        ctaLink: "https://ui.aceternity.com/templates",
+        ctaLink: "https://www.cnb.gov.sg/drug-information/drugs-and-inhalants",
         content: () => {
             return (
                 <p>
@@ -391,7 +391,7 @@ const cards = [
         title: "I can be your saviour!",
         src: heroin,
         ctaText: "Who Am I?",
-        ctaLink: "https://ui.aceternity.com/templates",
+        ctaLink: "https://www.cnb.gov.sg/drug-information/drugs-and-inhalants",
         content: () => {
             return (
                 <p>
@@ -407,7 +407,7 @@ const cards = [
         title: "I may be familiar...",
         src: meth,
         ctaText: "Who Am I?",
-        ctaLink: "https://ui.aceternity.com/templates",
+        ctaLink: "https://www.cnb.gov.sg/drug-information/drugs-and-inhalants",
         content: () => {
             return (
                 <p>
@@ -421,7 +421,7 @@ const cards = [
         title: "You Only Live Once.",
         src: NPS,
         ctaText: "Who Am I?",
-        ctaLink: "https://ui.aceternity.com/templates",
+        ctaLink: "https://www.cnb.gov.sg/drug-information/drugs-and-inhalants",
         content: () => {
             return (
                 <p>
@@ -435,7 +435,7 @@ const cards = [
         title: "Am I drinkable?",
         src: cocaine,
         ctaText: "Who Am I?",
-        ctaLink: "https://ui.aceternity.com/templates",
+        ctaLink: "https://www.cnb.gov.sg/drug-information/drugs-and-inhalants",
         content: () => {
             return (
                 <p>
