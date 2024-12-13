@@ -111,7 +111,7 @@ export default function Two() {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <div className="h-14 bg-gradient-to-r from-white to-black"></div>
+          
 
       
             <CardHeader>
