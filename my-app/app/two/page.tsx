@@ -48,7 +48,6 @@ import Gif2 from '@/app/photos/300k.gif'
 import Gif3 from '@/app/photos/cry.gif'
 import Gif4 from '@/app/photos/ml.gif'
 
-6
 import {
   Drawer,
   DrawerClose,
